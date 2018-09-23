@@ -33,8 +33,12 @@ var Player = function(x,y) {
     this.y = y;
     this.sprite = 'images/char-boy.png';
 };
-Player.prototype.update = function(k) {
-
+Player.prototype.update = function() {
+  //if the player reaches the water, you start from the begining.
+    if(this.y === -32){
+      this.y = 300;
+      this.x = 200;
+    }
 };
 // Draw the Player on the screen, required method for game
 Player.prototype.render = function() {
