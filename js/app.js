@@ -1,8 +1,10 @@
 // Enemies our player must avoid
-var Enemy = function() {
+var Enemy = function(x,y,speed) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
-
+    this.x = x;
+    this.y = y;
+    this.speed = speed;
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
@@ -14,22 +16,71 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
+    this.x = this.speed *dt;
 };
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
+Enemy.prototype.render;
 
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
+var Player = function(x,y) {
+    this.x = x;
+    this.y = y;
+    this.sprite = 'images/char-boy.png';
+};
+Player.prototype.update = function(k) {
 
+};
+// Draw the Player on the screen, required method for game
+Player.prototype.render = function() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
 
+Player.prototype.handleInput = function(key) {
+  switch (key) {
+    case "up":
+      //check if the player reached the top limits
+      if (this.y > -32) {
+        this.y -= 83;
+      }
+      break;
+    case "down":
+      //check if the player reached the bottom limits
+      if (this.y < 383) {
+        this.y += 83;
+      }
+      break;
+    case "right":
+      //check if the player reached the right limits
+      if (this.x < 402) {
+        this.x += 101;
+      }
+      break;
+    case "left":
+      //check if the player reached the left limits
+      if (this.x > -2) {
+        this.x -= 101;
+      }
+      break;
+  }
+};
+
+Player.prototype.render;
+
+let BugEnemy1 = new Enemy(0,63,10);
+let BugEnemy2 = new Enemy(0,147,12);
+let BugEnemy3 = new Enemy(0,230,16);
+let allEnemies = [BugEnemy1, BugEnemy2, BugEnemy3];
+
+var player = new Player(200,300);
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-
 
 
 // This listens for key presses and sends the keys to your
