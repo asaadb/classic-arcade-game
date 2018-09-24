@@ -2,6 +2,14 @@ body {
     text-align: center;
 }
 
-.timer {
+.timer, .score {
   font-size: 1.3rem;
+}
+
+.panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 40%;
+    margin: 2rem auto 0 auto;
 }

@@ -1,12 +1,17 @@
 //start timer
 let panel  = document.createElement("div");
-let time = document.createElement("span");
+let time = document.createElement("div");
+let score = document.createElement("div");
+let scoreCount = 0;
+score.textContent = "score: 0";
 time.classList.add('timer');
 panel.classList.add('panel');
+score.classList.add('score');
 panel.appendChild(time);
+panel.appendChild(score);
 document.body.appendChild(panel);
 //start timer
-function timer() {
+(function timer() {
   let min = 0;
   let sec = 0;
   watchInterval = setInterval(function() {
@@ -17,8 +22,12 @@ function timer() {
       min++;
     }
   }, 1000);
+})();
+//score function
+function scoring(){
+  scoreCount++;
+  score.textContent = `score: ${scoreCount}`;
 }
-timer()
 
 // Enemies our player must avoid
 class Enemy {
@@ -66,6 +75,7 @@ class Player {
   update() {
     //if the player reaches the water, you start from the begining.
     if (this.y === -32) {
+      scoring();
       this.y = 383;
       this.x = 200;
     }
