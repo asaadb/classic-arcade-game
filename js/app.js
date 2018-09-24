@@ -1,3 +1,25 @@
+//start timer
+let panel  = document.createElement("div");
+let time = document.createElement("span");
+time.classList.add('timer');
+panel.classList.add('panel');
+panel.appendChild(time);
+document.body.appendChild(panel);
+//start timer
+function timer() {
+  let min = 0;
+  let sec = 0;
+  watchInterval = setInterval(function() {
+    time.textContent = `${min} min:${sec} sec`;
+    sec++;
+    if (sec >= 60) {
+      sec = 0;
+      min++;
+    }
+  }, 1000);
+}
+timer()
+
 // Enemies our player must avoid
 class Enemy {
   constructor(x, y, speed) {
@@ -12,12 +34,12 @@ class Enemy {
     this.sprite = "images/enemy-bug.png";
   }
   update(dt) {
-    // You should any movement is multipled by the dt parameter
+    // any movement is multipled by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
     //if enemy reaches the end of the screen, start over again
     if (this.x > 485) {
-      this.x = -100;
+      this.x = -60;
       this.speed = randomSpeed();
     }
     //update the location based on the speed
