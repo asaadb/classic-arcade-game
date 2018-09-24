@@ -1,12 +1,13 @@
-//start timer
-let panel  = document.createElement("div");
-let time = document.createElement("div");
-let score = document.createElement("div");
+//create the score panel
+const panel = document.createElement("div");
+const time = document.createElement("div");
+const score = document.createElement("div");
+//to count scores
 let scoreCount = 0;
 score.textContent = "score: 0";
-time.classList.add('timer');
-panel.classList.add('panel');
-score.classList.add('score');
+time.classList.add("timer");
+panel.classList.add("panel");
+score.classList.add("score");
 panel.appendChild(time);
 panel.appendChild(score);
 document.body.appendChild(panel);
@@ -24,7 +25,7 @@ document.body.appendChild(panel);
   }, 1000);
 })();
 //score function
-function scoring(){
+function scoring() {
   scoreCount++;
   score.textContent = `score: ${scoreCount}`;
 }
@@ -126,7 +127,7 @@ let allEnemies = [BugEnemy1, BugEnemy2, BugEnemy3];
 let player = new Player(200, 383);
 //generate random speed
 function randomSpeed() {
-  return Math.floor(Math.random() * (400 - 100 + 1)) + 100;
+  return Math.floor(Math.random() * (500 - 150 + 1)) + 150;
 }
 //check two objects for collision
 function checkCollision(player, enemy) {
@@ -141,7 +142,7 @@ function checkCollision(player, enemy) {
     player.x = 200;
   }
 }
-
+// check each object for collision
 function checkBug(player) {
   for (const enemyObject of allEnemies) {
     checkCollision(player, enemyObject);
