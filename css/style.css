@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Pacifico');
 body {
     text-align: center;
     background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
@@ -12,7 +11,7 @@ h1 {
 .timer, .score {
   font-size: 1.3rem;
   margin: 0 1rem;
-  font-family: 'Pacifico', cursive;
+  font-family: 'Quantico', sans-serif;
 }
 
 .panel {

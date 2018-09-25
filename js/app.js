@@ -29,7 +29,6 @@ document.body.appendChild(panel);
 })();
 //score function
 function scoring() {
-
   score.textContent = `score: ${scoreCount}`;
 }
 
@@ -133,7 +132,7 @@ let player = new Player(200, 383);
 function randomSpeed() {
   return Math.floor(Math.random() * (530 - 190 + 1)) + 190;
 }
-function randomObject (bug){}
+function randomObject(bug) {}
 //check two objects for collision
 function checkCollision(player, enemy) {
   if (
@@ -147,7 +146,7 @@ function checkCollision(player, enemy) {
     player.y = 383;
     player.x = 200;
     // decrement the score by one point
-    if(scoreCount > 0){
+    if (scoreCount > 0) {
       scoreCount--;
       scoring();
     }
