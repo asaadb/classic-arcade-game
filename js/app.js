@@ -7,7 +7,6 @@ const header = document.createElement("h1");
 let scoreCount = 0;
 score.textContent = "score: 0";
 header.textContent = "Classic Arcade Game";
-header.classList.add("timer");
 time.classList.add("timer");
 panel.classList.add("panel");
 score.classList.add("score");
