@@ -52,7 +52,7 @@ class Enemy {
     // all computers.
     //if enemy reaches the end of the screen, start over again
     if (this.x > 485) {
-      this.x = -40;
+      this.x = -30;
       this.speed = randomSpeed();
     }
     //update the location based on the speed
@@ -131,7 +131,7 @@ let allEnemies = [BugEnemy1, BugEnemy2, BugEnemy3];
 let player = new Player(200, 383);
 //generate random speed
 function randomSpeed() {
-  return Math.floor(Math.random() * (500 - 150 + 1)) + 150;
+  return Math.floor(Math.random() * (530 - 190 + 1)) + 190;
 }
 function randomObject (bug){}
 //check two objects for collision
