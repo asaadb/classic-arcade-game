@@ -26,7 +26,7 @@ document.body.appendChild(panel);
 })();
 //score function
 function scoring() {
-  scoreCount++;
+
   score.textContent = `score: ${scoreCount}`;
 }
 
@@ -76,6 +76,7 @@ class Player {
   update() {
     //if the player reaches the water, you start from the begining.
     if (this.y === -32) {
+      scoreCount++;
       scoring();
       this.y = 383;
       this.x = 200;
@@ -138,8 +139,14 @@ function checkCollision(player, enemy) {
     player.y + player.height > enemy.y
   ) {
     // The objects are touching
+    //strat from the beginning
     player.y = 383;
     player.x = 200;
+    // decrement the score by one point
+    if(scoreCount > 0){
+      scoreCount--;
+      scoring();
+    }
   }
 }
 // check each object for collision
