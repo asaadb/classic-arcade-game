@@ -1,6 +1,6 @@
 # Classic Arcade Game (Frogger)
 This is a classic arcade game based on the Frogger game.
-![snippet](img/snippet.PNG)
+![snippet](images/snippet.PNG)
 
 ## Installing
 To play the game, you can either download the repository's zip file or clone the repository onto your own device and open the index.html file.
