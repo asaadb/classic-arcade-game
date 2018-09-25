@@ -2,6 +2,9 @@
 body {
     text-align: center;
 }
+h1 {
+  font-size: 4rem;
+}
 
 .timer, .score {
   font-size: 1.3rem;
@@ -11,7 +14,7 @@ body {
 
 .panel {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     justify-content: space-around;
     width: 40%;
     margin: 2rem auto 0 auto;

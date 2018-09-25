@@ -2,12 +2,16 @@
 const panel = document.createElement("div");
 const time = document.createElement("div");
 const score = document.createElement("div");
+const header = document.createElement("h1");
 //to count scores
 let scoreCount = 0;
 score.textContent = "score: 0";
+header.textContent = "Classic Arcade Game";
+header.classList.add("timer");
 time.classList.add("timer");
 panel.classList.add("panel");
 score.classList.add("score");
+panel.appendChild(header);
 panel.appendChild(time);
 panel.appendChild(score);
 document.body.appendChild(panel);
@@ -49,7 +53,7 @@ class Enemy {
     // all computers.
     //if enemy reaches the end of the screen, start over again
     if (this.x > 485) {
-      this.x = -60;
+      this.x = -40;
       this.speed = randomSpeed();
     }
     //update the location based on the speed
@@ -130,6 +134,7 @@ let player = new Player(200, 383);
 function randomSpeed() {
   return Math.floor(Math.random() * (500 - 150 + 1)) + 150;
 }
+function randomObject (bug){}
 //check two objects for collision
 function checkCollision(player, enemy) {
   if (
