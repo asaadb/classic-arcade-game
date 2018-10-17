@@ -3,7 +3,9 @@ This is a classic arcade game based on the Frogger game.
 ![snippet](images/snippet.PNG)
 
 ## Installing
-To play the game, you can either download the repository's zip file or clone the repository onto your own device and open the index.html file.
+To play the game You can:
+* Click on this link https://asaadb.github.io/classic-arcade-game/ to play it on your browser. Or
+* Download the repository's zip file or clone the repository onto your own device and open the index.html file.
 
 ## Challenge
 Reach the water and get more scores in less time.
